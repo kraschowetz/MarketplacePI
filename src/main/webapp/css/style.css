@@ -1,62 +1,41 @@
 :root {
-	--base: #eff1f5;
-	--overlay-l: #9ca0b0;
-	--overlay-d: #7c7f93;
-	--crust: #dce0e8;
-	--text: #4c4f69;
-	--text-d: #232634;
-	--subtext: #6c6f85;
-	--lavander: #7287fd;
-	--saphire: #209fb5;
-	--teal: #179299;
-	--green: #40a02b;
-	--yellow: #df8e1d;
-	--peach: #fe640b;
-	--maroom: #e64553;
-	--red: #d20f39;
-	--mauve: #8839ef;
-	--pink: #ea76cb;
-	--flamingo: #dd7878;	
+	--swan: #e9dfd3;
+	--beige: #e7ceb5;
+	--coffee: #d19f6c;
+	--avocado: #9a966e;
+	--black: #433d3f;
 }
 
 body {
-	background-color: var(--base);
+	background-color: var(--swan);
 	padding: 0px;
 	margin: 0px;
 	overflow-x: hidden;
 }
 
-#fixed-footer {
+header {
 	width: 100vw;
-	height: 2vh;
-	margin: 0px;
-	
-	background-color: var(--overlay-d);
-	
-	position: fixed;
-	bottom: 0px;
-	
+	height: 10vh;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	
+	background-color: var(--coffee);
 }
 
-#fixed-footer p {
-	font-family: Arial, sans-serif;
-	color: var(--text-d);
+header h1 {
+	color: var(--black);
+	padding-left: 20px;
 }
 
-#side-menu {
-	display: flex;
-	flex-direction: column;
+header #link-list {
+	display: flex;	
+	flex-direction: row-reverse;
+	width: 100vw;
+}
 
-	position: fixed;
-	right: 0px;
-
-	height: 98vh;
-	width: 15vw;
-
-	padding-left: 1rem;
-
-	background-color: var(--overlay-l);
+#link-list a {
+	text-decoration: none;
+	color: var(--black);
+	font-size: 20pt;
+	padding: 20px;
 }

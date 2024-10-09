@@ -6,20 +6,35 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Mitocondrea's style</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Climb</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-	<div id="fixed-footer">
-		<p>
-			®mitocondrea's style 2024
-		</p>
+	<header> <!--logo & list -->
+		<h1>
+			CLIMB
+		</h1>
+		<div id="link-list">
+			<a href="TODO">pesquisa</a>	
+			<a href="TODO">login</a>	
+			<a href="TODO">catálogo</a>	
+			<a href="TODO">inicio</a>	
+		</div>
+	</header>
+	<div> <!-- capa -->
+		<img>
 	</div>
 	
-	<div id="side-menu">
+	<section id="sobre_nos">
+
+	</section>
 	
-	</div>
+	<footer>
+	
+	</footer>
 </body>
 
 </html>
+
