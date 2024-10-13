@@ -8,6 +8,20 @@ public class Usuario {
 	String email;
 	String senha; //aramzenar somente a senha codificada & adicionar acessores?
 	
+	static int cifra = 12;
+	
+	public static String cifrarSenha(String senha) {
+		char[] charArray = senha.toCharArray();
+		String resultado = "";
+		
+		for(int i = 0; i < charArray.length; i++) {
+			charArray[i] += cifra;
+			resultado += charArray[i];
+		}
+		
+		return resultado;
+	}
+	
 	public Usuario() {
 		this.admin = false;
 		this.idade = 0;

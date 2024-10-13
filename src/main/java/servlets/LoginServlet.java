@@ -18,14 +18,13 @@ public class LoginServlet extends HttpServlet {
 	// banco de dados pra que?
 	Usuario[] usuarios = {
 			new Usuario(),
-			new Usuario(12, "enzo", "enzo@gmail.com", "enzo"),
-			new Usuario(21, "maria", "maria@gmail.com", "maria")
+			new Usuario(12, "enzo", "enzo@gmail.com", Usuario.cifrarSenha("enzo")),
+			new Usuario(21, "maria", "maria@gmail.com", Usuario.cifrarSenha("maria"))
 	};
 	
 	private static final long serialVersionUID = 1L;
     public LoginServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +40,7 @@ public class LoginServlet extends HttpServlet {
         	if(!email.equals(user.getEmail())) {
         		continue;
         	}
-        	if(!password.equals(user.getSenha())) {
+        	if(!Usuario.cifrarSenha(password).equals(user.getSenha())) {
         		continue;
         	}
         	
