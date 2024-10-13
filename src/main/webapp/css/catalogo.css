@@ -1,0 +1,35 @@
+:root {
+	--swan: #e9dfd3;
+	--beige: #e7ceb5;
+	--coffee: #d19f6c;
+	--avocado: #9a966e;
+	--black: #433d3f;
+}
+
+.belt {
+	display: flex;
+	width: 100vw;
+	height: 5vh;
+	
+	background-color: var(--beige);
+}
+
+.belt p {
+	font-family: sans-serif;
+	color: var(--black);
+	margin-left: 10pt;
+}
+
+.offset-inverse-belt {
+	display: flex;
+	width: 100%;
+	height: 5vh;
+	
+	flex-direction: row-reverse;
+}
+
+.offset-inverse-belt p {
+	font-family: sans-serif;
+	color: var(--black);
+	margin-right: 10pt;
+}
