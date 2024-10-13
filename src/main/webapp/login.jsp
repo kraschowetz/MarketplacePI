@@ -23,7 +23,7 @@
                 <input type="date" id="age" name="age">
 
                 <label for="email">email</label>
-                <input type="email" id="email" name="username" placeholder="fulano@gmail.com" required>
+                <input type="email" id="email" name="email" placeholder="fulano@gmail.com" required>
 
                 <label for="password">senha</label>
                 <input type="password" id="password" name="password" placeholder="suaSenha123" required>

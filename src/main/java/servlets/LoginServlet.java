@@ -8,8 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.tomcat.jdbc.pool.interceptor.AbstractQueryReport;
+
+import model.Usuario;
+
 @WebServlet("/validacao_login")
 public class LoginServlet extends HttpServlet {
+	
+	// banco de dados pra que?
+	Usuario[] usuarios = {
+			new Usuario(),
+			new Usuario(12, "enzo", "enzo@gmail.com", "enzo"),
+			new Usuario(21, "maria", "maria@gmail.com", "maria")
+	};
+	
 	private static final long serialVersionUID = 1L;
     public LoginServlet() {
         super();
@@ -23,20 +35,27 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
         String password = request.getParameter("password");
-
+        boolean auth = false;
         
-        if(!email.equals("janio@gmail.com")) {
-            response.sendRedirect("login.jsp?error=true");
-        	return;
-        }
-        if(!password.equals("123")) {
-            response.sendRedirect("login.jsp?error=true");
-        	return;
+        for(Usuario user : usuarios) {
+        	if(!email.equals(user.getEmail())) {
+        		continue;
+        	}
+        	if(!password.equals(user.getSenha())) {
+        		continue;
+        	}
+        	
+        	auth = true;
         }
         
-		HttpSession session = request.getSession();
-		session.setAttribute("username", email);
-		response.sendRedirect("welcome.jsp");
+        if(auth) {
+			HttpSession session = request.getSession();
+			session.setAttribute("username", email);
+			response.sendRedirect("welcome.jsp");
+        }
+        else {
+            response.sendRedirect("login.jsp?error=true");
+        }
 	}
 
 }
