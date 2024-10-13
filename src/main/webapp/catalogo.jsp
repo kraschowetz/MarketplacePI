@@ -14,13 +14,6 @@
 <body>
 	<jsp:include page="include/nav.jsp" />
 	<main>
-		<div> <!-- capa -->
-			<img>
-		</div>
-		
-		<section id="sobre_nos">
-
-		</section>
 	</main>
 	<jsp:include page="include/footer.jsp" />
 </body>

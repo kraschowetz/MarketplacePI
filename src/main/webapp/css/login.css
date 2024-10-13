@@ -1,0 +1,57 @@
+:root {
+	--swan: #e9dfd3;
+	--beige: #e7ceb5;
+	--coffee: #d19f6c;
+	--avocado: #9a966e;
+	--black: #433d3f;
+	
+	--input-margin: 1rem;
+}
+
+
+form{
+	display: flex;
+	flex-direction: column;
+}
+
+input {
+	margin-top: var(--input-margin);
+}
+
+label {
+	margin-top: var(--input-margin);
+}
+
+button {
+	margin-top: var(--input-margin);
+}
+
+#login-pane {
+	position: fixed;
+	left: 0px;
+	top: 8vh;
+	
+	width: 40vw;
+	height: 92vh;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	background-color: var(--beige);
+}
+
+#form-box {
+	display: flex;
+	flex-direction: column;
+	
+	width: 100%;
+	height: 100%;
+	
+}
+
+#buttons {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}

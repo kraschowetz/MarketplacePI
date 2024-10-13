@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebServlet("/validacao_login")
-public class validacao_login extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public validacao_login() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -21,17 +21,22 @@ public class validacao_login extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username");
+		String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-      
-        if (username.equals("exemplo@gmail.com") && password.equals("suaSenha123")) {
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
-            response.sendRedirect("welcome.jsp");
-        } else {
+        
+        if(!email.equals("janio@gmail.com")) {
             response.sendRedirect("login.jsp?error=true");
+        	return;
         }
+        if(!password.equals("123")) {
+            response.sendRedirect("login.jsp?error=true");
+        	return;
+        }
+        
+		HttpSession session = request.getSession();
+		session.setAttribute("username", email);
+		response.sendRedirect("welcome.jsp");
 	}
 
 }

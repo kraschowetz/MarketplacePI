@@ -13,9 +13,14 @@ body {
 	overflow-x: hidden;
 }
 
+main {
+	min-height: 92vh;
+}
+
+/* nav.jsp */
 header {
 	width: 100vw;
-	height: 10vh;
+	height: 8vh;
 	display: flex;
 	align-items: center;
 	
@@ -35,7 +40,25 @@ header #link-list {
 
 #link-list a {
 	text-decoration: none;
-	color: var(--black);
 	font-size: 20pt;
+	color: var(--black);
 	padding: 20px;
+}
+
+/* footer.jsp */
+
+footer {
+	background-color: var(--coffee);
+	
+	width: 100vw;
+	height: 6vh;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+footer p {
+	color: var(--black);
+	font-family: sans-serif;
 }
