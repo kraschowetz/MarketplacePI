@@ -49,6 +49,12 @@
 			<p>total:</p>
 			<h3>R$999,99</h3>
 		</div>
+		
+		<a href="caixa.jsp">
+			<div id="continue-button">
+				<p>Continuar</p>
+			</div>
+		</a>
 	</main>
 	<jsp:include page="include/footer.jsp" />
 </body>

@@ -1,0 +1,40 @@
+a {
+	text-decoration: none;
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
+#adm-belt {
+	display: flex;
+	flex-direction: row;
+	width: 90vw;	
+	height: 10vh;
+	margin-top: 12vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.adm-button {
+	width: 25.5vw;
+	height: 10vh;
+	
+	margin-right: 2.125vw;	
+	margin-left: 2.12vbw;
+	background-color: var(--avocado);
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	border: 0px;
+	border-radius: 10pt;
+}
+
+.adm-button p {
+	font-weight: bold;
+	color: var(--black);
+	user-select: none;
+	
+	text-decoration: none;
+}
