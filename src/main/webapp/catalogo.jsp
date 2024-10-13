@@ -23,7 +23,8 @@
 			<p>categoria</p>
 			<p>categoria</p>
 			<div class="offset-inverse-belt">
-				<p>pesquisa</p>
+				<a href="carrinho.jsp">carrinho</a>
+				<a href="#">pesquisa</a>
 			</div>
 		</div>
 	</main>
