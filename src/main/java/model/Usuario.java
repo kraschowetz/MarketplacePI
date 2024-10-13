@@ -27,7 +27,7 @@ public class Usuario {
 		this.idade = 0;
 		this.nome = "usuário_vazio";
 		this.email = "usuario.vazio@zipmail.com";
-		this.senha = "123";
+		this.senha = Usuario.cifrarSenha("123");
 	}
 	
 	public Usuario(int idade, String nome, String email, String senha) {
@@ -35,7 +35,7 @@ public class Usuario {
 		this.idade = idade;
 		this.nome = nome;
 		this.email = email;
-		this.senha = senha;
+		this.senha = Usuario.cifrarSenha(senha);
 	}
 	
 	public Usuario(int idade, String nome, String email, String senha, boolean admin) {
@@ -43,7 +43,7 @@ public class Usuario {
 		this.idade = idade;
 		this.nome = nome;
 		this.email = email;
-		this.senha = senha;
+		this.senha = Usuario.cifrarSenha(senha);
 	}
 	
 	public int getId() {

@@ -15,13 +15,7 @@
    	<div id="login-pane">
             <h2>Login</h2>
         <div id="form-box">
-            <form action="${pageContext.request.contextPath}/validacao_login" method="post">
-                <label for="name">nome</label>
-                <input type="text" id="name" name="name" placeholder="Fulano da Silva" required>
-
-                <label for="age">data de nascimento</label>
-                <input type="date" id="age" name="age">
-
+            <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
                 <label for="email">email</label>
                 <input type="email" id="email" name="email" placeholder="fulano@gmail.com" required>
 
@@ -35,6 +29,7 @@
                 </div>
             </form>
         </div>
+		<a href="cadastro.jsp">Cadastrar-se</a>
    	</div>
 </body>
 </html>

@@ -1,53 +1,42 @@
+<!-- WebContent/login.jsp -->
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="PT-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Climb</title>
+    <title>Login - Climb</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="https://via.placeholder.com/100" alt="Logo Climb">
-            </div>
-            <ul>
-                <li><a href="#">Iní­cio</a></li>
-                <li><a href="#">Catálogo</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Pesquisa</a></li>
-            </ul>
-        </nav>
-    </header>
+   	
+   	<jsp:include page="include/nav.jsp" />
+   	
+   	<div id="login-pane">
+            <h2>Login</h2>
+        <div id="form-box">
+            <form action="${pageContext.request.contextPath}/CadastroServlet" method="post">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Fulano da Silva" required>
 
-    <div class="form-container">
-        <div class="form-box">
-            <h2>Cadastro</h2>
-            <form action="cadastro" method="post">
-                <label for="nome">nome completo</label>
-                <input type="text" id="nome" name="nome" placeholder="Ana Maria da Silva" required>
+                <label for="age">Data de Nascimento</label>
+                <input type="date" id="age" name="age" required>
 
-                <label for="data-nascimento">data de nascimento</label>
-                <input type="text" id="data-nascimento" name="dataNascimento" placeholder="00/00/0000" required>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="fulano@gmail.com" required>
 
-                <label for="email">email</label>
-                <input type="email" id="email" name="email" placeholder="exemplo@gmail.com" required>
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="suaSenha123" required>
 
-                <label for="senha">senha</label>
-                <input type="password" id="senha" name="senha" placeholder="suaSenha123" required>
 
-                <button type="submit" class="register">Cadastrar</button>
+                <label for="conf-password">Confirmar Senha</label>
+                <input type="password" id="conf-password" name="confPassword" placeholder="suaSenha123" required>
+                
+                <div id="buttons">
+                    <button type="submit" class="login">Cadastrar</button>
+                </div>
             </form>
         </div>
-    </div>
-
-    <footer>
-        <p>Entre em contato com a gente!</p>
-        <div class="social-media">
-            <a href="#"><img src="https://via.placeholder.com/20" alt="Instagram"></a>
-            <a href="#"><img src="https://via.placeholder.com/20" alt="Facebook"></a>
-        </div>
-    </footer>
+   	</div>
 </body>
 </html>

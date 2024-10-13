@@ -12,14 +12,14 @@ import org.apache.tomcat.jdbc.pool.interceptor.AbstractQueryReport;
 
 import model.Usuario;
 
-@WebServlet("/validacao_login")
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	
 	// banco de dados pra que?
 	Usuario[] usuarios = {
 			new Usuario(),
-			new Usuario(12, "enzo", "enzo@gmail.com", Usuario.cifrarSenha("enzo")),
-			new Usuario(21, "maria", "maria@gmail.com", Usuario.cifrarSenha("maria"))
+			new Usuario(12, "enzo", "enzo@gmail.com", "enzo"),
+			new Usuario(21, "maria", "maria@gmail.com", "maria", true)
 	};
 	
 	private static final long serialVersionUID = 1L;
@@ -35,6 +35,7 @@ public class LoginServlet extends HttpServlet {
 		String email = request.getParameter("email");
         String password = request.getParameter("password");
         boolean auth = false;
+        Usuario usr = null;
         
         for(Usuario user : usuarios) {
         	if(!email.equals(user.getEmail())) {
@@ -45,12 +46,18 @@ public class LoginServlet extends HttpServlet {
         	}
         	
         	auth = true;
+        	usr = user;
         }
         
         if(auth) {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", email);
-			response.sendRedirect("welcome.jsp");
+			if(usr.getAdmin()) {
+				response.sendRedirect("area_admin.jsp");
+			}
+			else {
+				response.sendRedirect("index.jsp");
+			}
         }
         else {
             response.sendRedirect("login.jsp?error=true");
